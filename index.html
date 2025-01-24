@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, #4b6cb7, #182848);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background: #333;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #4b6cb7;
+        }
+
+        section {
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        /* DESIGN SA ABOUT ME */
+        .about {
+            text-align: center;
+        }
+
+        .about img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .about .links {
+            margin-top: 20px;
+        }
+
+        .about a {
+            color: #4b6cb7;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .about a:hover {
+            color: #182848;
+        }
+
+        /* DESIGN SA SOCIAL MEDIA*/
+        .social {
+            text-align: center;
+        }
+
+        .social .links {
+            margin-top: 20px;
+        }
+
+        .social a {
+            color: #4b6cb7;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .skills, .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skills div, .projects div {
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .skills div:hover, .projects div:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meryl Loi B. Tombado</h1>
+        <p>Frontend Developer | Full Stack Enthusiast</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#social">Social</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-----------------------------------------------------------------------------------SECTION 1------------------------------------------------------------------------------------>
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <img src="mer.jpg" alt="Your Photo">
+        <p>Hello! I'm a passionate full stack developer based in Philippines. I enjoy building user-friendly web applications and continuously improving my skills through experience.</p>
+        <div class="links">
+            <a href="https://www.linkedin.com/in/meryl-loi-tombado-0848ab269/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/your-github-profile" target="_blank">GitHub</a>
+            <a href="resume.pdf" target="_blank">Resume</a>
+        </div>
+    </section>
+    <!-----------------------------------------------------------------------------------SECTION 2------------------------------------------------------------------------------------>
+    <section id="social" class="social">
+        <h2>Social Media</h2>
+        <div class="links">
+            <a href="https://www.facebook.com/merylloi" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/merylloi/" target="_blank">Instagram</a>
+            <a href="https://x.com/merylloi_" target="_blank">Twitter(X)</a>
+        </div>
+    </section>
+    <!-----------------------------------------------------------------------------------SECTION 3------------------------------------------------------------------------------------>
+    <section id="skills">
+        <h2>Programming Skills</h2>
+        <div class="skills">
+            <div>HTML</div>
+            <div>CSS</div>
+            <div>JavaScript</div>
+            <div>Python</div>
+            <div>Java</div>
+        </div>
+    </section>
+    <!-----------------------------------------------------------------------------------SECTION 4------------------------------------------------------------------------------------>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div>
+                <h3>Project 1</h3>
+                <p>A simple CRUD application.</p>
+                <a href="https://merylloi.github.io/simpeCRUDapp/" target="_blank">View Project</a>
+            </div>
+            <div>
+                <h3>Project 2</h3>
+                <p>A student portal</p>
+                <a href="https://merylloi.github.io/studentportal/" target="_blank">View Project</a>
+            </div>
+        </div>
+    </section>
+    <!-----------------------------------------------------------------------------------SECTION 5------------------------------------------------------------------------------------>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required style="padding: 10px; margin-bottom: 10px; width: 100%;">
+            <input type="email" placeholder="Your Email" required style="padding: 10px; margin-bottom: 10px; width: 100%;">
+            <textarea placeholder="Your Message" required style="padding: 10px; width: 100%; height: 100px;"></textarea>
+            <button type="submit" style="padding: 10px 20px; background: #4b6cb7; color: #fff; border: none; cursor: pointer;">Send</button>
+        </form>
+    </section>
+    <!-----------------------------------------------------------------------------------FOOTER------------------------------------------------------------------------------------>
+    <footer>
+        <p>&copy; 2025 Meryl Loi B. Tombado. All rights reserved.</p>
+    </footer>
+</body>
+</html>
