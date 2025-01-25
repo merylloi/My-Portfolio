@@ -15,14 +15,14 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            background-color: #f4f4f9;
+            background:#ddd;
             color: #333;
             overflow-x: hidden;
         }
 
         header {
             background: linear-gradient(90deg, #4b6cb7, #182848);
-            color: #fff;
+            color: #08b9ff;
             padding: 20px 0;
             text-align: center;
         }
@@ -62,7 +62,9 @@
         }
         /* DESIGN SA ABOUT ME */
         .about {
+            background:#ddd;
             text-align: center;
+            color: #084f6b;
         }
 
         .about img {
@@ -78,7 +80,7 @@
         }
 
         .about a {
-            color: #4b6cb7;
+            color: #08b9ff;
             text-decoration: none;
             font-weight: bold;
             margin: 0 10px;
@@ -92,6 +94,16 @@
         /* DESIGN SA SOCIAL MEDIA*/
         .social {
             text-align: center;
+            background:#ddd;
+            color:#fcfeff;
+        }
+
+        nav b {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
         }
 
         .social .links {
@@ -99,26 +111,30 @@
         }
 
         .social a {
-            color: #4b6cb7;
+            color: #08b9ff;
             text-decoration: none;
             font-weight: bold;
             margin: 0 10px;
             transition: color 0.3s;
         }
 
+        .social a:hover {
+            color: #182848;
+        }
+
         .skills, .projects {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
+            color: #084f6b;
         }
 
         .skills div, .projects div {
-            background: #fff;
+            background: #39b2e2af;
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 5px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
         }
 
         .skills div:hover, .projects div:hover {
@@ -153,7 +169,7 @@
     <section id="about" class="about">
         <h2>About Me</h2>
         <img src="mer.jpg" alt="Your Photo">
-        <p>Hello! I'm a passionate full stack developer based in Philippines. I enjoy building user-friendly web applications and continuously improving my skills through experience.</p>
+        <p><b>Hello! I'm a passionate full stack developer based in Philippines. I enjoy building user-friendly web applications and continuously improving my skills through experience.</b></p>
         <div class="links">
             <a href="https://www.linkedin.com/in/meryl-loi-tombado-0848ab269/" target="_blank">LinkedIn</a>
             <a href="https://github.com/your-github-profile" target="_blank">GitHub</a>
@@ -162,7 +178,7 @@
     </section>
     <!-----------------------------------------------------------------------------------SECTION 2------------------------------------------------------------------------------------>
     <section id="social" class="social">
-        <h2>Social Media</h2>
+        <nav><h2>Social Media</h2></nav>
         <div class="links">
             <a href="https://www.facebook.com/merylloi" target="_blank">Facebook</a>
             <a href="https://www.instagram.com/merylloi/" target="_blank">Instagram</a>
@@ -173,11 +189,11 @@
     <section id="skills">
         <h2>Programming Skills</h2>
         <div class="skills">
-            <div>HTML</div>
-            <div>CSS</div>
-            <div>JavaScript</div>
-            <div>Python</div>
-            <div>Java</div>
+            <div><b>HTML</b></div>
+            <div><b>CSS</b></div>
+            <div><b>JavaScript</b></div>
+            <div><b>Python</b></div>
+            <div><b>Java</b></div>
         </div>
     </section>
     <!-----------------------------------------------------------------------------------SECTION 4------------------------------------------------------------------------------------>
@@ -185,13 +201,13 @@
         <h2>Projects</h2>
         <div class="projects">
             <div>
-                <h3>Project 1</h3>
-                <p>A simple CRUD application.</p>
+                <h3><b>PROJECT 1</b></h3>
+                <p><b>A simple CRUD application.</b></p>
                 <a href="https://merylloi.github.io/simpeCRUDapp/" target="_blank">View Project</a>
             </div>
             <div>
-                <h3>Project 2</h3>
-                <p>A student portal</p>
+                <h3><b>PROJECT 2</b></h3>
+                <p><b>A student portal</b></p>
                 <a href="https://merylloi.github.io/studentportal/" target="_blank">View Project</a>
             </div>
         </div>
