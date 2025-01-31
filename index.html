@@ -41,6 +41,7 @@
             justify-content: center;
             padding: 10px;
             background: #333;
+            color: #fff;
         }
 
         nav a {
@@ -95,7 +96,7 @@
         .social {
             text-align: center;
             background:#ddd;
-            color:#fcfeff;
+            color:#08b9ff;
         }
 
         nav b {
@@ -119,25 +120,32 @@
         }
 
         .social a:hover {
-            color: #182848;
+            color: #08b9ff;
+        }
+
+        .skills {
+            text-align: center;
+            background:#ddd;
+            color:#fcfeff;
         }
 
         .skills, .projects {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-            color: #084f6b;
+            color: #08b9ff;
         }
 
-        .skills div, .projects div {
-            background: #39b2e2af;
+        .skills div, .projects div, .social div {
+            background: linear-gradient(90deg, #4b6cb7, #182848);
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 5px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            
         }
 
-        .skills div:hover, .projects div:hover {
+        .skills div:hover, .projects div:hover, .social div:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s;
@@ -169,7 +177,7 @@
     <section id="about" class="about">
         <h2>About Me</h2>
         <img src="mer.jpg" alt="Your Photo">
-        <p><b>Hello! I'm a passionate full stack developer based in Philippines. I enjoy building user-friendly web applications and continuously improving my skills through experience.</b></p>
+        <p><b>I am a passionate Frontend Developer and Full Stack Enthusiast with a strong focus on creating dynamic, user-friendly web experiences. I enjoy building sleek, responsive interfaces using modern frameworks and technologies. Continuously learning and exploring backend development, I aim to create seamless full-stack solutions. My goal is to bridge design and functionality, delivering high-quality applications that enhance user engagement.</b></p>
         <div class="links">
             <a href="https://www.linkedin.com/in/meryl-loi-tombado-0848ab269/" target="_blank">LinkedIn</a>
             <a href="https://github.com/your-github-profile" target="_blank">GitHub</a>
@@ -187,7 +195,7 @@
     </section>
     <!-----------------------------------------------------------------------------------SECTION 3------------------------------------------------------------------------------------>
     <section id="skills">
-        <h2>Programming Skills</h2>
+        <nav><h2>Programming Languages</h2></nav>
         <div class="skills">
             <div><b>HTML</b></div>
             <div><b>CSS</b></div>
@@ -198,7 +206,7 @@
     </section>
     <!-----------------------------------------------------------------------------------SECTION 4------------------------------------------------------------------------------------>
     <section id="projects">
-        <h2>Projects</h2>
+        <nav><h2>My Projects</h2></nav>
         <div class="projects">
             <div>
                 <h3><b>PROJECT 1</b></h3>
@@ -214,14 +222,87 @@
     </section>
     <!-----------------------------------------------------------------------------------SECTION 5------------------------------------------------------------------------------------>
     <section id="contact">
-        <h2>Contact Me</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required style="padding: 10px; margin-bottom: 10px; width: 100%;">
-            <input type="email" placeholder="Your Email" required style="padding: 10px; margin-bottom: 10px; width: 100%;">
-            <textarea placeholder="Your Message" required style="padding: 10px; width: 100%; height: 100px;"></textarea>
-            <button type="submit" style="padding: 10px 20px; background: #4b6cb7; color: #fff; border: none; cursor: pointer;">Send</button>
+        <h2 style="text-align: center; margin-bottom: 20px; color: #084f6b;">Contact Me</h2>
+        <form style="
+            background: #fff;
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ccc;
+        ">
+            <label for="name" style="display: block; margin-bottom: 10px; font-weight: bold; font-size: 1rem; color: #333;">Name:</label>
+            <input 
+                type="text" 
+                id="name" 
+                placeholder="Your Name" 
+                required 
+                style="
+                    padding: 12px;
+                    margin-bottom: 20px;
+                    width: 100%;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    font-size: 1rem;
+                "
+            >
+            
+            <label for="email" style="display: block; margin-bottom: 10px; font-weight: bold; font-size: 1rem; color: #333;">Email:</label>
+            <input 
+                type="email" 
+                id="email" 
+                placeholder="Your Email" 
+                required 
+                style="
+                    padding: 12px;
+                    margin-bottom: 20px;
+                    width: 100%;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    font-size: 1rem;
+                "
+            >
+            
+            <label for="message" style="display: block; margin-bottom: 10px; font-weight: bold; font-size: 1rem; color: #333;">Message:</label>
+            <textarea 
+                id="message" 
+                placeholder="Your Message" 
+                required 
+                style="
+                    padding: 12px;
+                    width: 100%;
+                    height: 150px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    margin-bottom: 20px;
+                    font-size: 1rem;
+                "
+            ></textarea>
+            
+            <button 
+                type="submit" 
+                style="
+                    display: block;
+                    width: 100%;
+                    padding: 12px;
+                    background: #4b6cb7;
+                    color: #fff;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    transition: background 0.3s;
+                "
+                onmouseover="this.style.background='#182848';"
+                onmouseout="this.style.background='#4b6cb7';"
+            >
+                Send
+            </button>
         </form>
     </section>
+    
     <!-----------------------------------------------------------------------------------FOOTER------------------------------------------------------------------------------------>
     <footer>
         <p>&copy; 2025 Meryl Loi B. Tombado. All rights reserved.</p>
