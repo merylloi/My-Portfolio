@@ -43,6 +43,10 @@
             padding: 10px;
             background: #333;
             color: #fff;
+            position: sticky;
+            z-index: 1000;
+            background: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         nav a {
@@ -62,6 +66,7 @@
             max-width: 1200px;
             margin: auto;
         }
+
         /* DESIGN SA ABOUT ME */
         .about {
             background:#ddd;
@@ -147,37 +152,43 @@
     }
 
     .projects div {
-        background: #fff;
-        border: 1px solid #ddd;
-        border-radius: 10px;
+        background: linear-gradient(135deg, #4b6cb7, #182848);
+        border: none;
         padding: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .projects div:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     }
 
     .projects h3 {
-        color: #08b9ff;
+        color: #fff;
         margin-bottom: 10px;
     }
 
-    .projects p {
-        margin-bottom: 15px;
-        color: #ddd;
+    .projects p, .skills div b {
+        color: #e0e0e0;
     }
 
     .projects a {
         text-decoration: none;
         font-weight: bold;
+        color: #fff;
+        background: #08b9ff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        display: inline-block;
+        margin-top: 10px;
         transition: background 0.3s, transform 0.2s;
     }
 
     .projects a:hover {
         background: #182848;
+        transform: scale(1.05);
     }
 
     .skills div i {
@@ -232,7 +243,29 @@
         color: #182848;
     }
 
+    form {
+        background: linear-gradient(90deg, #4b6cb7, #182848);
+        padding: 30px;
+        max-width: 600px;
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+    form label {
+        color: #fff;
+        font-size: 1rem;
+    }
+    form input, form textarea {
+        background: #fff;
+        color: #333;
+    }
+    form button:hover {
+        background: #182848 !important;
+    }
+
     </style>
+
+
 </head>
 <body>
     <header>
@@ -413,10 +446,69 @@
             </button>
         </form>
     </section>
+
+    <button id="scrollToTop" onclick="scrollToTop()" 
+    style="
+        position: fixed; 
+        bottom: 20px; 
+        right: 20px; 
+        display: none; 
+        padding: 10px 15px; 
+        background: #4b6cb7; 
+        color: #fff; 
+        border: none; 
+        border-radius: 50%; 
+        font-size: 1.5rem; 
+        cursor: pointer; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        transition: background 0.3s;
+    "
+    onmouseover="this.style.background='#182848';"
+    onmouseout="this.style.background='#4b6cb7';">
+    ↑
+</button>
+
+<script>
+    // Show button when user scrolls down
+    window.onscroll = function() {
+        const btn = document.getElementById('scrollToTop');
+        btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    };
+
+    // Scroll-to-top functionality
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            }
+        });
+    });
+
+    sections.forEach(section => observer.observe(section));
+
+</script>
     
     <!-----------------------------------------------------------------------------------FOOTER------------------------------------------------------------------------------------>
     <footer>
-        <p>&copy; 2025 Meryl Loi B. Tombado. All rights reserved.</p>
+        <p>
+            &copy; 2025 Meryl Loi B. Tombado. All rights reserved.
+        </p>
+        <div class="links">
+            <a href="https://www.facebook.com/merylloi" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/merylloi/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://x.com/merylloi_" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
     </footer>
 </body>
 </html>
