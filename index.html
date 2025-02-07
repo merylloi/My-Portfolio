@@ -1,514 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <title>My Portfolio</title>
-    <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background:#ddd;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        header {
-            background: linear-gradient(90deg, #4b6cb7, #182848);
-            color: #08b9ff;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            padding: 10px;
-            background: #333;
-            color: #fff;
-            position: sticky;
-            z-index: 1000;
-            background: #333;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #4b6cb7;
-        }
-
-        section {
-            padding: 40px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        /* DESIGN SA ABOUT ME */
-        .about {
-            background:#ddd;
-            text-align: center;
-            color: #084f6b;
-        }
-
-        .about img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .about .links {
-            margin-top: 20px;
-        }
-
-        .about a {
-            color: #08b9ff;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-
-        .about a:hover {
-            color: #182848;
-        }
-
-        /* DESIGN SA SOCIAL MEDIA*/
-        .social {
-            text-align: center;
-            background:#ddd;
-            color:#08b9ff;
-        }
-
-        nav b {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .social .links {
-            margin-top: 20px;
-        }
-
-        .social a {
-            color: #08b9ff;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-
-        .social a:hover {
-            color: #08b9ff;
-        }
-
-        .skills {
-            text-align: center;
-            background:#ddd;
-            color:#fcfeff;
-        }
-
-        .skills div {
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        font-size: 1.2rem;
-        color: #08b9ff;
-    }
-
-    .projects {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        color: #333;
-        text-align: center;
-    }
-
-    .projects div {
-        background: linear-gradient(135deg, #4b6cb7, #182848);
-        border: none;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .projects div:hover {
-        transform: translateY(-5px) scale(1.02);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    }
-
-    .projects h3 {
-        color: #fff;
-        margin-bottom: 10px;
-    }
-
-    .projects p, .skills div b {
-        color: #e0e0e0;
-    }
-
-    .projects a {
-        text-decoration: none;
-        font-weight: bold;
-        color: #fff;
-        background: #08b9ff;
-        padding: 10px 15px;
-        border-radius: 5px;
-        display: inline-block;
-        margin-top: 10px;
-        transition: background 0.3s, transform 0.2s;
-    }
-
-    .projects a:hover {
-        background: #182848;
-        transform: scale(1.05);
-    }
-
-    .skills div i {
-        font-size: 1.5rem; /* Size of the icons */
-        margin-right: 10px; /* Space between icon and text */
-    }
-
-        .skills, .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            color: #08b9ff;
-        }
-
-        .skills div, .projects div, .social div {
-            background: linear-gradient(90deg, #4b6cb7, #182848);
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            
-        }
-
-        .skills div:hover, .projects div:hover, .social div:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: #fff;
-        }
-
-        .links a {
-        display: inline-block;
-        color: #08b9ff;
-        text-decoration: none;
-        font-weight: bold;
-        margin: 0 10px;
-        font-size: 1.1rem;
-        transition: color 0.3s;
-    }
-
-    .links a i {
-        font-size: 1.2rem;
-    }
-
-    .links a:hover {
-        color: #182848;
-    }
-
-    form {
-        background: linear-gradient(90deg, #4b6cb7, #182848);
-        padding: 30px;
-        max-width: 600px;
-        margin: 0 auto;
-        border-radius: 10px;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    }
-    form label {
-        color: #fff;
-        font-size: 1rem;
-    }
-    form input, form textarea {
-        background: #fff;
-        color: #333;
-    }
-    form button:hover {
-        background: #182848 !important;
-    }
-
-    </style>
-
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>My Portfolio</title>
 </head>
-<body>
-    <header>
-        <h1>Meryl Loi B. Tombado</h1>
-        <p>Frontend Developer | Full Stack Enthusiast</p>
-    </header>
+<body> 
+  <header>
+    <h1>Meryl Loi B. Tombado</h1>
+    <p>Frontend Developer | Full Stack Enthusiast</p>
+  </header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#social">Social</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#social">Social</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <!-----------------------------------------------------------------------------------SECTION 1------------------------------------------------------------------------------------>
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <img src="mer.jpg" alt="Your Photo">
-        <p><b>I am a passionate Frontend Developer and Full Stack Enthusiast with a strong focus on creating dynamic, user-friendly web experiences.</b></p>
-        <div class="links">
-            <a href="https://www.linkedin.com/in/meryl-loi-tombado-0848ab269/" target="_blank">
-                <i class="fab fa-linkedin" style="margin-right: 5px;"></i>LinkedIn
-            </a>
-            <a href="https://github.com/your-github-profile" target="_blank">
-                <i class="fab fa-github" style="margin-right: 5px;"></i>GitHub
-            </a>
-            <a href="resume.pdf" target="_blank">
-                <i class="fas fa-file-alt" style="margin-right: 5px;"></i>Resume
-            </a>
-        </div>
-    </section>
-    
-    <!-----------------------------------------------------------------------------------SECTION 2------------------------------------------------------------------------------------>
-    <section id="social" class="social">
-        <nav><h2>Social Media</h2></nav>
-        <div class="links">
-            <a href="https://www.facebook.com/merylloi" target="_blank">
-                <i class="fab fa-facebook" style="margin-right: 5px;"></i>Facebook
-            </a>
-            <a href="https://www.instagram.com/merylloi/" target="_blank">
-                <i class="fab fa-instagram" style="margin-right: 5px;"></i>Instagram
-            </a>
-            <a href="https://x.com/merylloi_" target="_blank">
-                <i class="fab fa-twitter" style="margin-right: 5px;"></i>Twitter (X)
-            </a>
-        </div>
-    </section>
-    <!-----------------------------------------------------------------------------------SECTION 3------------------------------------------------------------------------------------>
-    <section id="skills">
-        <nav><h2>Programming Languages</h2></nav>
-        <div class="skills">
-            <div>
-                <i class="fab fa-html5" style="color: #e34c26; margin-right: 10px; font-size: 1.5rem;"></i><b>HTML</b>
-            </div>
-            <div>
-                <i class="fab fa-css3-alt" style="color: #1572b6; margin-right: 10px; font-size: 1.5rem;"></i><b>CSS</b>
-            </div>
-            <div>
-                <i class="fab fa-js" style="color: #f7df1e; margin-right: 10px; font-size: 1.5rem;"></i><b>JavaScript</b>
-            </div>
-            <div>
-                <i class="fab fa-python" style="color: #3776ab; margin-right: 10px; font-size: 1.5rem;"></i><b>Python</b>
-            </div>
-            <div>
-                <i class="fab fa-java" style="color: #f89820; margin-right: 10px; font-size: 1.5rem;"></i><b>Java</b>
-            </div>
-        </div>
-    </section>
-    
-    <!-----------------------------------------------------------------------------------SECTION 4------------------------------------------------------------------------------------>
-    <section id="projects">
-        <nav><h2>My Projects</h2></nav>
-        <div class="projects">
-            <div>
-                <h3>
-                    <i class="fas fa-database" style="color: #4b6cb7; margin-right: 5px;"></i>
-                    <b>CRUD Application</b>
-                </h3>
-                <p>A simple CRUD application for managing tasks.</p>
-                <a href="https://merylloi.github.io/simpeCRUDapp/" target="_blank" 
-                   style="text-decoration: none; color: #fff; background: #4b6cb7; padding: 10px 15px; border-radius: 5px; display: inline-block; margin-top: 10px;">
-                    View Project
-                </a>
-            </div>
-            <div>
-                <h3>
-                    <i class="fas fa-users" style="color: #4b6cb7; margin-right: 5px;"></i>
-                    <b>Student Portal</b>
-                </h3>
-                <p>A student portal application for managing academic records.</p>
-                <a href="https://merylloi.github.io/studentportal/" target="_blank" 
-                   style="text-decoration: none; color: #fff; background: #4b6cb7; padding: 10px 15px; border-radius: 5px; display: inline-block; margin-top: 10px;">
-                    View Project
-                </a>
-            </div>
-        </div>
-    </section>
-    <!-----------------------------------------------------------------------------------SECTION 5------------------------------------------------------------------------------------>
-    <section id="contact">
-        <h2 style="text-align: center; margin-bottom: 20px; color: #084f6b;">Contact Me</h2>
-        <form style="
-            background: #fff;
-            padding: 30px;
-            max-width: 600px;
-            margin: 0 auto;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            border: 1px solid #ccc;
-        ">
-            <label for="name" style="display: block; margin-bottom: 10px; font-weight: bold; font-size: 1rem; color: #333;">Name:</label>
-            <input 
-                type="text" 
-                id="name" 
-                placeholder="Your Name" 
-                required 
-                style="
-                    padding: 12px;
-                    margin-bottom: 20px;
-                    width: 100%;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                    font-size: 1rem;
-                "
-            >
-            
-            <label for="email" style="display: block; margin-bottom: 10px; font-weight: bold; font-size: 1rem; color: #333;">Email:</label>
-            <input 
-                type="email" 
-                id="email" 
-                placeholder="Your Email" 
-                required 
-                style="
-                    padding: 12px;
-                    margin-bottom: 20px;
-                    width: 100%;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                    font-size: 1rem;
-                "
-            >
-            
-            <label for="message" style="display: block; margin-bottom: 10px; font-weight: bold; font-size: 1rem; color: #333;">Message:</label>
-            <textarea 
-                id="message" 
-                placeholder="Your Message" 
-                required 
-                style="
-                    padding: 12px;
-                    width: 100%;
-                    height: 150px;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                    margin-bottom: 20px;
-                    font-size: 1rem;
-                "
-            ></textarea>
-            
-            <button 
-                type="submit" 
-                style="
-                    display: block;
-                    width: 100%;
-                    padding: 12px;
-                    background: #4b6cb7;
-                    color: #fff;
-                    border: none;
-                    cursor: pointer;
-                    border-radius: 5px;
-                    font-size: 1rem;
-                    font-weight: bold;
-                    transition: background 0.3s;
-                "
-                onmouseover="this.style.background='#182848';"
-                onmouseout="this.style.background='#4b6cb7';"
-            >
-                Send
-            </button>
-        </form>
-    </section>
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <img src="mer.jpg" alt="Your Photo" />
+    <p><strong>I am a passionate Frontend Developer and Full Stack Enthusiast with a strong focus on creating dynamic, user-friendly web experiences.</strong></p>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/meryl-loi-tombado-0848ab269/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/your-github-profile" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a href="resume.pdf" target="_blank">
+        <i class="fas fa-file-alt"></i> Resume
+      </a>
+    </div>
+  </section>
 
-    <button id="scrollToTop" onclick="scrollToTop()" 
-    style="
-        position: fixed; 
-        bottom: 20px; 
-        right: 20px; 
-        display: none; 
-        padding: 10px 15px; 
-        background: #4b6cb7; 
-        color: #fff; 
-        border: none; 
-        border-radius: 50%; 
-        font-size: 1.5rem; 
-        cursor: pointer; 
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-        transition: background 0.3s;
-    "
-    onmouseover="this.style.background='#182848';"
-    onmouseout="this.style.background='#4b6cb7';">
-    ↑
-</button>
+  <section id="social" class="social">
+    <h2>Social Media</h2>
+    <div class="links">
+      <a href="https://www.facebook.com/merylloi" target="_blank">
+        <i class="fab fa-facebook"></i> Facebook
+      </a>
+      <a href="https://www.instagram.com/merylloi/" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://x.com/merylloi_" target="_blank">
+        <i class="fab fa-twitter"></i> Twitter (X)
+      </a>
+    </div>
+  </section>
 
-<script>
-    // Show button when user scrolls down
-    window.onscroll = function() {
-        const btn = document.getElementById('scrollToTop');
-        btn.style.display = window.scrollY > 300 ? 'block' : 'none';
-    };
+  <section id="skills">
+    <h2>Programming Languages</h2>
+    <div class="skills">
+      <div>
+        <i class="fab fa-html5" style="color: #e34c26;"></i>
+        <strong>HTML</strong>
+      </div>
+      <div>
+        <i class="fab fa-css3-alt" style="color: #1572b6;"></i>
+        <strong>CSS</strong>
+      </div>
+      <div>
+        <i class="fab fa-js" style="color: #f7df1e;"></i>
+        <strong>JavaScript</strong>
+      </div>
+      <div>
+        <i class="fab fa-python" style="color: #3776ab;"></i>
+        <strong>Python</strong>
+      </div>
+      <div>
+        <i class="fab fa-java" style="color: #f89820;"></i>
+        <strong>Java</strong>
+      </div>
+    </div>
+  </section>
 
-    // Scroll-to-top functionality
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div>
+        <h3>
+          <i class="fas fa-database" style="color: #4b6cb7;"></i>
+          <strong>CRUD Application</strong>
+        </h3>
+        <p>A simple CRUD application for managing tasks.</p>
+        <a href="https://merylloi.github.io/simpeCRUDapp/" target="_blank">View Project</a>
+      </div>
+      <div>
+        <h3>
+          <i class="fas fa-users" style="color: #4b6cb7;"></i>
+          <strong>Student Portal</strong>
+        </h3>
+        <p>A student portal application for managing academic records.</p>
+        <a href="https://merylloi.github.io/studentportal/" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
 
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
-            }
-        });
-    });
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Your Name" required />
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Your Email" required />
+      
+      <label for="message">Message:</label>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-    sections.forEach(section => observer.observe(section));
+  <button id="scrollToTop" onclick="scrollToTop()">↑</button>
 
-</script>
-    
-    <!-----------------------------------------------------------------------------------FOOTER------------------------------------------------------------------------------------>
-    <footer>
-        <p>
-            &copy; 2025 Meryl Loi B. Tombado. All rights reserved.
-        </p>
-        <div class="links">
-            <a href="https://www.facebook.com/merylloi" target="_blank">
-                <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/merylloi/" target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://x.com/merylloi_" target="_blank">
-                <i class="fab fa-twitter"></i>
-            </a>
-        </div>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Meryl Loi B. Tombado. All rights reserved.</p>
+    <div class="links">
+      <a href="https://www.facebook.com/merylloi" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/merylloi/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com/merylloi_" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+<script src="main.js"></script>
 </body>
 </html>
