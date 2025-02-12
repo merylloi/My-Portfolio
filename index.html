@@ -19,20 +19,20 @@
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
-
+ 
   <section id="about" class="about">
     <h2>About Me</h2>
     <img src="mer.jpg" alt="Your Photo" />
     <p><strong>I am a passionate Frontend Developer and Full Stack Enthusiast with a strong focus on creating dynamic, user-friendly web experiences.</strong></p>
     <div class="links">
       <a href="https://www.linkedin.com/in/meryl-loi-tombado-0848ab269/" target="_blank">
-        <i class="fab fa-linkedin"></i> LinkedIn
+        <i class="fab fa-linkedin"></i> <strong>LINKEDIN</strong>
       </a>
       <a href="https://github.com/your-github-profile" target="_blank">
-        <i class="fab fa-github"></i> GitHub
+        <i class="fab fa-github"></i> <strong>GITHUB</strong>
       </a>
       <a href="resume.pdf" target="_blank">
-        <i class="fas fa-file-alt"></i> Resume
+        <i class="fas fa-file-alt"></i> <strong>RESUME</strong>
       </a>
     </div>
   </section>
@@ -41,13 +41,13 @@
     <h2>Social Media</h2>
     <div class="links">
       <a href="https://www.facebook.com/merylloi" target="_blank">
-        <i class="fab fa-facebook"></i> Facebook
+        <i class="fab fa-facebook"></i> <strong>FACEBOOK</strong>
       </a>
       <a href="https://www.instagram.com/merylloi/" target="_blank">
-        <i class="fab fa-instagram"></i> Instagram
+        <i class="fab fa-instagram"></i> <strong>INSTAGRAM</strong>
       </a>
       <a href="https://x.com/merylloi_" target="_blank">
-        <i class="fab fa-twitter"></i> Twitter (X)
+        <i class="fab fa-twitter"></i> <strong>TWITTER</strong>
       </a>
     </div>
   </section>
@@ -101,19 +101,27 @@
   </section>
 
   <section id="contact">
-    <h2>Contact Me</h2>
-    <form class="contact-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" placeholder="Your Name" required />
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" placeholder="Your Email" required />
-      
-      <label for="message">Message:</label>
-      <textarea id="message" placeholder="Your Message" required></textarea>
-      
-      <button type="submit">Send Message</button>
-    </form>
+    <h2>What's your thought ?</h2>
+    <div class="contact-container"> <!-- New container for centering -->
+      <div class="card">
+        <span class="title">Leave a Comment</span>
+        <form class="form">
+          <div class="group">
+            <input placeholder="‎" type="text" required="">
+            <label for="name">Name</label>
+          </div>
+          <div class="group">
+            <input placeholder="‎" type="email" id="email" name="email" required="">
+            <label for="email">Email</label>
+          </div>
+          <div class="group">
+            <textarea placeholder="‎" id="comment" name="comment" rows="5" required=""></textarea>
+            <label for="comment">Comment</label>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
   </section>
 
   <button id="scrollToTop" onclick="scrollToTop()">↑</button>
